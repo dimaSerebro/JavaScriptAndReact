@@ -1,17 +1,11 @@
 "use strict";
 
-//alert('Hello!');
+const category = "toys";
 
-/* const result = confirm('Are you here?');
-console.log(result); */
+//console.log('https:someurl.com/' + category + '/' +'4');
 
-/* const answer = +prompt("Are you 18 years old?", "");
-console.log(answer + 5); */
+console.log(`https:someurl.com/${category}/5`);
 
-const answers = [];
-
-answers[0] = prompt("What is your name?", "");
-answers[1] = prompt("What is your surname?", "");
-answers[2] = prompt("How old are you?", "");
-console.log(typeof(answers));
-console.log(typeof(null));
+const user = "Dima";
+alert(`Hi ${user}`)
+console.log(`Привет ${user}`);
