@@ -1,34 +1,17 @@
 "use strict";
-let number = 3.4; //number
 
-console.log(-5/0); // infinity
+//alert('Hello!');
 
-console.log('string' * 5); // NaN
+/* const result = confirm('Are you here?');
+console.log(result); */
 
-const person = `5`; //string
+/* const answer = +prompt("Are you 18 years old?", "");
+console.log(answer + 5); */
 
-const bool = false; //boolean (true or false)
+const answers = [];
 
-//console.log(something); //null
-
-let hot;
-console.log(hot); //undefined
-// Объект
-const obj = {
-   name: "Dima",
-   age: 24,
-   isMarried: false
-};
-
-console.log(obj.name);
-//console.log(obj["name"]);
-//массив это частный случай объекта
-   //      0            1            2   3           4   5
-let arr = ['plump.png', 'orange.jpg', 6, 'apple.bmp', {}, []];
-console.log(arr[2]);
-
-
-
-
-
-
+answers[0] = prompt("What is your name?", "");
+answers[1] = prompt("What is your surname?", "");
+answers[2] = prompt("How old are you?", "");
+console.log(typeof(answers));
+console.log(typeof(null));
