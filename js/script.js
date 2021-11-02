@@ -1,42 +1,59 @@
 "use strict";
+/* Задание на урок:
 
-/* console.log('arr' + " - object ");
-console.log( 4 + " - object ");
-console.log( 4 + +"4");  */
+1) Создать переменную numberOfFilms и в неё поместить ответ от пользователя на вопрос:
+'Сколько фильмов вы уже посмотрели?'
 
-let incr = 10,
-    decr = 10;
+2) Создать объект personalMovieDB и в него поместить такие свойства:
+    - count - сюда передается ответ на первый вопрос
+    - movies - в это свойство поместить пустой объект
+    - actors - тоже поместить пустой объект
+    - genres - сюда поместить пустой массив
+    - privat - в это свойство поместить boolean(логическое) значение false
 
-/* incr++;//увеличивает на 1(постфиксная форма записи)
---decr;//уменьшает на 1 (префиксная форма записи) */
+3) Задайте пользователю по два раза вопросы:
+    - 'Один из последних просмотренных фильмов?'
+    - 'На сколько оцените его?'
+Ответы стоит поместить в отдельные переменные
+Записать ответы в объект movies в формате:
+    movies: {
+        'logan': '8.1'
+    }
 
-//возвращает старое значение до увеличения или уменьшения
-console.log(incr++);
-console.log(decr--);
-//возвращает увеличенное или уменьшенное на 1 значение
-console.log(++incr);
-console.log(--decr);
+Проверить, чтобы все работало без ошибок в консоли */
 
-console.log(10%4);// остаток от деления
+                        // Мое решение
+/* const numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
+let lastOfFilms = prompt("Один из последних просмотренных фильмов?", "");
+let scoreOfFilms = prompt("На сколько оцените его?", ":");
 
-console.log(2*4 == 8);// true
-console.log(2*4 == '8'); // сравнивает значения и не смотрит на их тип
-console.log(2*4 === '8');// false строгое сравнение(идет сравнение числа и строки)
+const personalMovieDB = {
+   count: numberOfFilms,
+   movies: {lastOfFilms, scoreOfFilms},
+   actors: {},
+   genres: [],
+   privat: false
+};
+console.log(personalMovieDB.count);
+console.log(personalMovieDB.movies); */
 
-// Оператор и && / или ||
+const numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
 
-/* const isOpen = true, // && если один из подопечных будет false они оба будут ложны
-      isClosed = false;
-console.log(isOpen && isClosed);// false */
-/*
-const isOpen = false, // || или  , если одно из условий будет true ответ будет true
-      isClosed = false;
-console.log(isOpen || isClosed);// false */
-  // оператор отрицания "!"
-const isOpen = false,
-      isClosed = false;
-console.log(isOpen || !isClosed);// true
 
-console.log(2 + 2 * 2 == 8);// false будь внимателен с приорететами операторов
-console.log(2 + 2 * 2 != 6);// false
-console.log(2 + 2 * 2 !== '6');// true
+const personalMovieDB = {
+   count: numberOfFilms,
+   movies: {},
+   actors: {},
+   genres: [],
+   privat: false
+};
+
+const a = prompt("Один из последних просмотренных фильмов?", ""),
+      b = prompt("На сколько оцените его?", ""),
+      c = prompt("Один из последних просмотренных фильмов?", ""),
+      d = prompt("На сколько оцените его?", "");
+
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
+console.log(personalMovieDB);
+
