@@ -1,37 +1,23 @@
 "use strict";
-// Условия if , else , "?"(тернарный оператор)
-if (4 == 9) {
-   console.log('Ok!');
-} else {
-   console.log('Error');
+  //  Циклы while и for
+
+let num = 50;
+
+/* while (num <= 55) {
+   console.log(num);
+   num++;
 }
+ */
 
-/* const num = 50;
+/* do {
+   console.log(num);
+   num++;
+} while (num <= 52); */
 
-if (num < 49) {
-   console.log('Error');
-} else if (num > 100) {
-   console.log('Много!');
-} else {
-   console.log('ok!');
-}
-
-(num === 50) ? console.log('ok!') : console.log('Error'); */
-
-const num = 50;
-
-switch (num) {
-   case 49:
-      console.log('No no no');
-      break;
-   case 100:
-      console.log('No no no');
-      break;
-   case 50:
-      console.log('В точку!');
-      break;
-   default:
-      console.log('Не в этот раз(');
-      break;
-
+for (let i = 1; i < 10; i++) {
+   if (i === 6) {
+      //break; результат от 1 до 6
+      continue; // пропускает шаг который нам не нужен, не прерывая при этом цикл
+   }
+   console.log(i);
 }
