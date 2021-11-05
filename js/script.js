@@ -1,65 +1,26 @@
 "use strict";
-const numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
 
+const str = "teSt";
 
-const personalMovieDB = {
-   count: numberOfFilms,
-   movies: {},
-   actors: {},
-   genres: [],
-   privat: false
-};
+// console.log(str[2] = 'd');  так не работает
 
-// let i = 0;
+console.log(str.toLocaleLowerCase());
+console.log(str.toLocaleUpperCase());
 
-/* while (i < 2) {
-   i++;
-   const a = prompt("Один из последних просмотренных фильмов?", ""),
-         b = prompt("На сколько оцените его?", "");
-   if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-      personalMovieDB.movies[a] = b;
-      console.log('done');
-   } else {
-      console.log('error');
-      i--;
-   }
-} */
+const fruit = 'Some fruit';
+console.log(fruit.indexOf('fruit'));
+console.log(fruit.indexOf('g'));// возвращает значение -1 так как не нашло искуемый элемент в строке
 
-/* do {
-   i++;
-   const a = prompt("Один из последних просмотренных фильмов?", ""),
-         b = prompt("На сколько оцените его?", "");
-   if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-      personalMovieDB.movies[a] = b;
-      console.log('done');
-   } else {
-      console.log('error');
-      i--;
-   }
-} while (i < 2); */
+const logg = "Good buy everybody";
 
+console.log(logg.slice(4, 18));// может принимать отрицательные значения, будет отсчет с конца строки
+console.log(logg.substring(4, 8)); // не принимает отрицательные значения , если напишем -1  тогда будет 0
 
-for (let i = 0; i < 2; i++) {
-   const a = prompt("Один из последних просмотренных фильмов?", ""),
-         b = prompt("На сколько оцените его?", "");
+console.log(logg.substr(4, 4));
 
-   if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-      personalMovieDB.movies[a] = b;
-      console.log('done');
-   } else {
-      console.log('error');
-      i--;
-   }
-}
+const num = 23.4;
+console.log(Math.round(num));
 
-if (personalMovieDB.count < 10) {
-   console.log('Просмотрено довольно мало фильмов');
-} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-   console.log('Вы классический зритель');
-} else if (personalMovieDB.count >= 30) {
-   console.log('Вы киноман');
-} else {
-   console.log('Произошла ошибка');
-}
-
-console.log(personalMovieDB);
+const test = '12.3px';
+console.log(parseInt(test));// переводит в нужную единицу измирения и округляет к целому
+console.log(parseFloat(test));// возвращет число с плавающей точкой 
