@@ -1,26 +1,91 @@
 "use strict";
+let numberOfFilms;
 
-const str = "teSt";
+function start () {
+   numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
 
-// console.log(str[2] = 'd');  так не работает
+   while (numberOfFilms == "" || numberOfFilms == null || isNaN(numberOfFilms)) {
+      numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
+   }
+}
+start();
 
-console.log(str.toLocaleLowerCase());
-console.log(str.toLocaleUpperCase());
+const personalMovieDB = {
+   count: numberOfFilms,
+   movies: {},
+   actors: {},
+   genres: [],
+   privat: false
+};
 
-const fruit = 'Some fruit';
-console.log(fruit.indexOf('fruit'));
-console.log(fruit.indexOf('g'));// возвращает значение -1 так как не нашло искуемый элемент в строке
+// let i = 0;
 
-const logg = "Good buy everybody";
+/* while (i < 2) {
+   i++;
+   const a = prompt("Один из последних просмотренных фильмов?", ""),
+         b = prompt("На сколько оцените его?", "");
+   if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+      personalMovieDB.movies[a] = b;
+      console.log('done');
+   } else {
+      console.log('error');
+      i--;
+   }
+} */
 
-console.log(logg.slice(4, 18));// может принимать отрицательные значения, будет отсчет с конца строки
-console.log(logg.substring(4, 8)); // не принимает отрицательные значения , если напишем -1  тогда будет 0
+/* do {
+   i++;
+   const a = prompt("Один из последних просмотренных фильмов?", ""),
+         b = prompt("На сколько оцените его?", "");
+   if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+      personalMovieDB.movies[a] = b;
+      console.log('done');
+   } else {
+      console.log('error');
+      i--;
+   }
+} while (i < 2); */
 
-console.log(logg.substr(4, 4));
+function rememberMyFilms () {
+   for (let i = 0; i < 2; i++) {
+      const a = prompt("Один из последних просмотренных фильмов?", ""),
+            b = prompt("На сколько оцените его?", "");
 
-const num = 23.4;
-console.log(Math.round(num));
+      if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+         personalMovieDB.movies[a] = b;
+         console.log('done');
+      } else {
+         console.log('error');
+         i--;
+      }
+   }
+}
+// rememberMyFilms();
 
-const test = '12.3px';
-console.log(parseInt(test));// переводит в нужную единицу измирения и округляет к целому
-console.log(parseFloat(test));// возвращет число с плавающей точкой 
+function detectMyPersonalLevel () {
+   if (personalMovieDB.count < 10) {
+      console.log('Просмотрено довольно мало фильмов');
+   } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+      console.log('Вы классический зритель');
+   } else if (personalMovieDB.count >= 30) {
+      console.log('Вы киноман');
+   } else {
+      console.log('Произошла ошибка');
+   }
+}
+// detectMyPersonalLevel();
+
+function showMyDB (hidden) {
+   if (!hidden) {
+      console.log(personalMovieDB);
+   }
+}
+showMyDB(personalMovieDB.privat);
+
+function writeYourGenres () {
+   for(let i = 1; i <= 3; i++) {
+      personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
+   }
+}
+writeYourGenres();
+
