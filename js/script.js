@@ -1,28 +1,52 @@
 "use strict";
 
-function first () {
-   // do something
-   setTimeout(function() {
-      console.log(1);
-   }, 500);
+const options = {
+   name: 'test',
+   height: 1024,
+   width: 1024,
+   colors: {
+      border: 'red',
+      bg: 'black'
+   }
+};
+//console.log(options['colors']['border']);
+// delete options.name;
+// console.log(options);
+
+console.log(Object.keys(options).length);
+// Методы это действия которые может совершать наш объект!
+const quality = {
+   kindness: true,
+   honesty: true,
+   greed: false,
+   poverty: false,
+   loyalty: {
+      treason: false,
+      notTreason: true
+   },
+   makeTest: function() {
+      console.log('Test');
+   }
+};
+
+quality.makeTest();
+
+const {treason, notTreason} = quality.loyalty;// Деструктиризация это когда мы можем достать коробку из коробки и напрямую обратиться к ней 
+console.log(treason);
+
+console.log(Object.keys(quality).length);
+
+/* let counter = 0;
+for (let key in options) {
+   if (typeof (options[key]) === 'object') {
+      for (let i in options[key]) {
+         console.log(`Свойство ${i} имеет значение ${options[key] [i]}`);
+      }
+   } else {
+      console.log(`Свойство ${key} имеет значение ${options[key]}`);
+      counter++;
+   }
 }
+console.log(counter); */
 
-function second () {
-   console.log(2);
-}
 
-first();
-second();
-
-// Callback - это функция которая должна быть выполнена после того как другая функция завершила свое выполнение.
-
-function learnJS (lang, callback) {
-   console.log(`Я учу: ${lang}`);
-   callback();
-}
-
-function done () {
-   console.log('Я прошел этот урок');
-}
-
-learnJS('Java Script', done);
