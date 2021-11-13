@@ -1,62 +1,26 @@
-"use strict";
-// Динамичесская типизация в JS
+'use strict';
+//!                    Получение элементов со страницы
 
-					// To string  (можно что-то превратить в строку)
+const box = document.getElementById('box');
 
-// 1) вариант с помощью String
-console.log(typeof(String(null)));
-console.log(typeof(String(5)));
+console.log (box);
 
-//2) канкатинация
+const btns = document.getElementsByTagName('button');//*  мы получаем колекцию из кнопок он же массив , что бы получить одну кнопку в конец прописываем в квадратных скобках нужный элемент по порядку [1]
 
-console.log(typeof(5 + ''));
+console.log(btns[1]);//* или выбираем нужный элемент когда будем делать изменения над ними
 
-// пример
+const circle = document.getElementsByClassName('circle');
+//!  если мы работаем с классом то мы не ставим точку пред обьявлением елемента
 
-const num = 5;
-console.log('https://vk.com/catalog/' + num);
+console.log(circle);
 
-const fontSize = 20 + 'px';
-console.log(fontSize);
+const hearts = document.querySelectorAll('.heart');
+//!  если мы работаем с селектором мы ставим точку перед елементом поиска
 
 
-					// To number
+hearts.forEach( item => {
+   console.log(item);
+});
 
-//1) Number
-console.log(typeof(Number(null)));
-console.log(typeof(Number("привет")));
-
-//2) унарный +
-console.log(typeof(+"4"));
-
-//3)
-console.log(typeof(parseInt("15px" + 10)));
-
-					// To boolean
-
-// 0, '', null, undefined, NaN -  эти типы данных преобразуються в False
-
-//1)
-let switcher = null;
-
-function heySwitch () {
-	if (switcher) {
-		console.log('Working...' );
-	}
-}
-switcher = 1;
-
-heySwitch();
-
-//2)
-console.log(typeof(Boolean('0')));
-
-//3)
-console.log(typeof(!!'0'));
-
-
-
-
-
-
-
+const oneHeart = document.querySelector('.heart');
+console.log(oneHeart);
